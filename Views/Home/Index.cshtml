@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "WeatherApplication";
+    string[] TableHeaders = new string[] {
+          "City"
+            ,"Temperature"
+            ,"Humidity"
+            ,"Weather description"
+            ,"Update date"};
+    string[] TableHeadersGdansk = new string[] {
+          "City"
+            ,"Temperature"
+            ,"Humidity"
+            ,"Weather description"
+            ,"Update date"};
+    }
+    <div class="table">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    @{
+                        foreach (var head in TableHeaders)
+                        {
+                            <th>
+                                @head
+                            </th>
+                        }
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var Data in Model.Item1)
+                        {
+                            <tr>
+                                <td>@Data.City</td>
+                                <td>@Data.Temp</td>
+                                <td>@Data.Humidity</td>
+                                <td>@Data.Descr</td>
+                                <td>@Data.UpdateDate</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="table">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    @{
+                        foreach (var head in TableHeadersGdansk)
+                        {
+                            <th>
+                                @head
+                            </th>
+                        }
+                    }
+                </tr>
+            </thead>
+
+            <tbody>
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var Data in Model.Item2)
+                        {
+                            <tr>
+                                <td>@Data.City</td>
+                                <td>@Data.Temp</td>
+                                <td>@Data.Humidity</td>
+                                <td>@Data.Descr</td>
+                                <td>@Data.UpdateDate</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
